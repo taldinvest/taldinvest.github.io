@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продукты - Строительные материалы</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Магазин строительных материалов</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">Главная</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Продукты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shipping.html">Доставка и Оплата</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Контакты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="products" class="mt-4">
+            <div class="container">
+                <h2>Наши продукты</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="cement.jpg" class="card-img-top" alt="Цемент">
+                            <div class="card-body">
+                                <h5 class="card-title">Цемент</h5>
+                                <p class="card-text">Цена: 500 руб.</p>
+                                <button class="btn btn-primary" onclick="addToCart('Цемент', 500)">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="brick.jpg" class="card-img-top" alt="Кирпич">
+                            <div class="card-body">
+                                <h5 class="card-title">Кирпич</h5>
+                                <p class="card-text">Цена: 20 руб.</p>
+                                <button class="btn btn-primary" onclick="addToCart('Кирпич', 20)">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="sand.jpg" class="card-img-top" alt="Песок">
+                            <div class="card-body">
+                                <h5 class="card-title">Песок</h5>
+                                <p class="card-text">Цена: 1000 руб.</p>
+                                <button class="btn btn-primary" onclick="addToCart('Песок', 1000)">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="wood.jpg" class="card-img-top" alt="Древесина">
+                            <div class="card-body">
+                                <h5 class="card-title">Древесина</h5>
+                                <p class="card-text">Цена: 1500 руб.</p>
+                                <button class="btn btn-primary" onclick="addToCart('Древесина', 1500)">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="metal.jpg" class="card-img-top" alt="Металл">
+                            <div class="card-body">
+                                <h5 class="card-title">Металл</h5>
+                                <p class="card-text">Цена: 2500 руб.</p>
+                                <button class="btn btn-primary" onclick="addToCart('Металл', 2500)">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="glass.jpg" class="card-img-top" alt="Стекло">
+                            <div class="card-body">
+                                <h5 class="card-title">Стекло</h5>
+                                <p class="card-text">Цена: 800 руб.</p>
+                                <button class="btn btn-primary" onclick="addToCart('Стекло', 800)">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light py-3">
+        <div class="container">
+            <p class="text-center">&copy; 2024 Магазин строительных материалов. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

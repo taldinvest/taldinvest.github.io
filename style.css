@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #008cba;
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2em;
+}
+
+.navbar {
+    background-color: #008cba;
+    border-radius: 5px;
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #005f5f !important;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.jumbotron {
+    background-color: #007bff;
+    color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+button {
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005f5f;
+}
+
+#reviews .card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#reviews .card-text {
+    font-size: 1em;
+}
+
+ul.list-group li {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul.list-group li button {
+    background-color: red;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+ul.list-group li button:hover {
+    background-color: darkred;
+}
+
+.search-results .card {
+    margin-bottom: 20px;
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-inline input {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 20px;
+    }
+
+    .navbar-collapse {
+        flex-direction: column;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form-inline input {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .form-inline button {
+        width: 100%;
+    }
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #008cba;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s;
+}
