@@ -1,11 +1,14 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
+    padding-top: 70px; /* Height of the navigation bar */
 }
 
+/* Header Styles */
 header {
     background-color: #34495e;
     color: #fff;
@@ -23,8 +26,13 @@ header h1 {
     font-size: 2.5em;
 }
 
+/* Navbar Styles */
 .navbar {
     background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .nav-link {
@@ -38,6 +46,12 @@ header h1 {
     color: #1abc9c !important;
 }
 
+.navbar-nav .nav-item .nav-link.active {
+    color: #005f5f !important;
+    font-weight: bold;
+}
+
+/* Main Content Styles */
 main {
     padding: 20px 0;
 }
@@ -52,6 +66,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer Styles */
 footer {
     background-color: #34495e;
     color: #fff;
@@ -62,6 +77,7 @@ footer {
     bottom: 0;
 }
 
+/* Card Styles */
 .card {
     margin-bottom: 20px;
     border: none;
@@ -75,6 +91,7 @@ footer {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Button Styles */
 button {
     background-color: #1abc9c;
     color: #fff;
@@ -90,6 +107,7 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* Reviews Section Styles */
 #reviews .card-title {
     font-size: 1.5em;
     font-weight: bold;
@@ -99,6 +117,7 @@ button:hover {
     font-size: 1.1em;
 }
 
+/* List Group Styles */
 ul.list-group li {
     display: flex;
     justify-content: space-between;
@@ -118,10 +137,12 @@ ul.list-group li button:hover {
     background-color: darkred;
 }
 
+/* Search Results Styles */
 .search-results .card {
     margin-bottom: 20px;
 }
 
+/* Form Inline Styles */
 .form-inline {
     display: flex;
     flex-direction: row;
@@ -135,6 +156,22 @@ ul.list-group li button:hover {
     border: 1px solid #ddd;
 }
 
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #34495e;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s;
+    font-size: 1.1em;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     .jumbotron {
         padding: 20px;
@@ -159,72 +196,3 @@ ul.list-group li button:hover {
     }
 }
 
-.notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #34495e;
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: opacity 0.3s;
-    font-size: 1.1em;
-}
-/* Добавление активного состояния */
-.navbar-nav .nav-item .nav-link.active {
-    color: #005f5f !important;
-    font-weight: bold;
-}
-
-/* Фиксированное меню навигации */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-body {
-    padding-top: 70px; /* Высота навигационной панели */
-}
-/* Общие цвета и фон */
-body, .navbar, .footer, .btn, .card {
-    font-family: Arial, sans-serif;
-}
-
-/* Навигационная панель */
-.navbar {
-    background-color: blue; /* Синий фон для навигационной панели */
-    color: white; /* Белый текст */
-}
-
-/* Цвет текста в общем и цвет ссылок */
-body, .nav-link {
-    color: black; /* Черный текст */
-}
-
-/* Кнопки */
-.btn {
-    background-color: beige; /* Бежевый фон кнопок */
-    color: black; /* Черный текст на кнопках */
-    border: none;
-    transition: all 0.3s ease; /* Плавная анимация для всех свойств */
-}
-
-.btn:hover, .btn:focus {
-    background-color: darken(beige, 10%); /* Темнее при наведении */
-    transform: scale(1.05); /* Немного увеличивается */
-}
-
-/* Footer */
-footer {
-    background-color: darkblue; /* Темно-синий фон в footer */
-    color: white; /* Белый текст в footer */
-}
-
-/* Карточки товаров и другие элементы */
-.card {
-    border: 1px solid blue; /* Синяя рамка вокруг карточек */
-}

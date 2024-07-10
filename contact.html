@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - Строительные материалы</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -25,7 +25,7 @@
                             <a class="nav-link" href="about.html">О нас</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shipping.html">Доставка и Оплата</а>
+                            <a class="nav-link" href="shipping.html">Доставка и Оплата</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Контакты</a>
@@ -48,24 +48,24 @@
                 <p><strong>Email:</strong> info@stroyshop.ru</p>
 
                 <h3>Форма обратной связи</h3>
-                <form>
+                <form onsubmit="return validateForm()">
                     <div class="form-group">
                         <label for="name">Имя</label>
-                        <input type="text" class="form-control" id="name" placeholder="Введите ваше имя">
+                        <input type="text" class="form-control" id="name" placeholder="Введите ваше имя" aria-label="Введите ваше имя" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Введите ваш email">
+                        <input type="email" class="form-control" id="email" placeholder="Введите ваш email" aria-label="Введите ваш email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Сообщение</label>
-                        <textarea class="form-control" id="message" rows="5" placeholder="Введите ваше сообщение"></textarea>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Введите ваше сообщение" aria-label="Введите ваше сообщение" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Отправить</button>
                 </form>
 
                 <h3>Наше местоположение</h3>
-                <div id="map" style="height: 400px;"></div>
+                <div id="map" style="height: 400px;" aria-label="Карта с нашим местоположением"></div>
             </div>
         </section>
     </main>
@@ -76,9 +76,9 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
     <script>
         function initMap() {
@@ -91,6 +91,18 @@
                 position: location,
                 map: map
             });
+        }
+
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Пожалуйста, заполните все поля формы.');
+                return false;
+            }
+            return true;
         }
     </script>
 </body>

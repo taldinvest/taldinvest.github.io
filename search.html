@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
                             <a class="nav-link" href="about.html">О нас</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shipping.html">Доставка и Оплата</a>
+                            <a class="nav-link" href="shipping.html">Доставка и Оплата</а>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Контакты</a>
@@ -58,9 +58,9 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
     <script>
         const products = [
             { name: 'Цемент', price: 500, img: 'cement.jpg' },
@@ -95,7 +95,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">${product.name}</h5>
                                 <p class="card-text">Цена: ${product.price} руб.</p>
-                                <button class="btn btn-primary" onclick="addToCart('${product.name}', ${product.price})">Добавить в корзину</button>
+                                <button class="btn btn-primary" onclick="addToCart('${product.name}', ${product.price})" aria-label="Добавить ${product.name} в корзину">Добавить в корзину</button>
                             </div>
                         </div>
                     </div>

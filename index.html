@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ТАЛДИНВЕСТ: Магазин строительных материалов с широким ассортиментом и доступными ценами.">
+    <meta name="keywords" content="строительные материалы, ремонт, строительство, ТАЛДИНВЕСТ">
+    <meta name="author" content="ТАЛДИНВЕСТ">
     <title>ТАЛДИНВЕСТ "Строительные материалы"</title>
-    <meta name="description" content="Магазин строительных материалов - лучшие товары по доступным ценам.">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,9 +21,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Главная</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="products.html">Продукты</a>
                         </li>
@@ -38,10 +37,9 @@
                             <a class="nav-link" href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
                         </li>
                     </ul>
-                    <form class="form-inline ml-auto" onsubmit="return performSearch(event)">
-                        <input class="form-control mr-sm-2" type="search" id="search-query" placeholder="Поиск" aria-label="Поиск" oninput="autoCompleteSearch()">
+                    <form class="form-inline ml-auto" action="search.html">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Поиск">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
-                        <div id="autocomplete-results" class="autocomplete-results"></div>
                     </form>
                 </div>
             </nav>
@@ -145,9 +143,10 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Updated versions of jQuery and Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

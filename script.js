@@ -37,13 +37,15 @@ function removeFromCart(index) {
 }
 
 function clearCart() {
-    cart = [];
-    cartCount = 0;
-    totalPrice = 0;
-    updateCart();
-    localStorage.removeItem('cart');
-    localStorage.removeItem('cartCount');
-    localStorage.removeItem('totalPrice');
+    if (confirm("Вы уверены, что хотите очистить корзину?")) {
+        cart = [];
+        cartCount = 0;
+        totalPrice = 0;
+        updateCart();
+        localStorage.removeItem('cart');
+        localStorage.removeItem('cartCount');
+        localStorage.removeItem('totalPrice');
+    }
 }
 
 function saveCart() {
@@ -69,7 +71,9 @@ window.onload = function() {
         totalPrice = parseInt(localStorage.getItem('totalPrice'), 10) || 0;
         updateCart();
     }
+    document.getElementById('search-query').addEventListener('input', autoCompleteSearch);
 }
+
 const products = [
     { name: 'Цемент', price: 500, img: 'cement.jpg', category: 'cement' },
     { name: 'Кирпич', price: 20, img: 'brick.jpg', category: 'brick' },
@@ -125,20 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayProducts(products);
     updateCart();
 });
-// Подтверждение перед очисткой корзины
-function clearCart() {
-    if (confirm("Вы уверены, что хотите очистить корзину?")) {
-        cart = [];
-        cartCount = 0;
-        totalPrice = 0;
-        updateCart();
-        localStorage.removeItem('cart');
-        localStorage.removeItem('cartCount');
-        localStorage.removeItem('totalPrice');
-    }
-}
 
-// Функции для автодополнения поиска
 function autoCompleteSearch() {
     const query = document.getElementById('search-query').value.toLowerCase();
     const results = products.filter(product => product.name.toLowerCase().includes(query));
@@ -155,21 +146,8 @@ function displayAutocompleteResults(results) {
         resultItem.innerText = product.name;
         resultItem.onclick = () => {
             document.getElementById('search-query').value = product.name;
-            document.getElementById('autocomplete-results').innerHTML = '';
+            resultsContainer.innerHTML = '';
         };
         resultsContainer.appendChild(resultItem);
     });
-}
-
-// Оставляем существующие функции без изменений
-
-window.onload = function() {
-    if (localStorage.getItem('cart')) {
-        cart = JSON.parse(localStorage.getItem('cart'));
-        cartCount = parseInt(localStorage.getItem('cartCount'), 10) || 0;
-        totalPrice = parseInt(localStorage.getItem('totalPrice'), 10) || 0;
-        updateCart();
-    }
-    // Добавляем обработчики событий для автодополнения
-    document.getElementById('search-query').addEventListener('input', autoCompleteSearch);
 }
