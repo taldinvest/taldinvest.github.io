@@ -6,6 +6,7 @@
     <title>ТАЛДИНВЕСТ "Строительные материалы"</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -88,37 +89,47 @@
             </div>
         </section>
         
-        <section id="reviews" class="mt-4">
+        <section id="testimonials" class="mt-4">
             <div class="container">
                 <h2>Отзывы клиентов</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Иван Иванов</h5>
-                                <p class="card-text">Отличный магазин! Все материалы отличного качества.</p>
-                                <p class="card-text"><small class="text-muted">2 дня назад</small></p>
+                <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card animate__animated animate__fadeInUp">
+                                <div class="card-body">
+                                    <h5 class="card-title">Иван Иванов</h5>
+                                    <p class="card-text">Отличный магазин! Все материалы отличного качества.</p>
+                                    <p class="card-text"><small class="text-muted">2 дня назад</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card animate__animated animate__fadeInUp">
+                                <div class="card-body">
+                                    <h5 class="card-title">Петр Петров</h5>
+                                    <p class="card-text">Быстрая доставка и отличное обслуживание.</p>
+                                    <p class="card-text"><small class="text-muted">1 неделя назад</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card animate__animated animate__fadeInUp">
+                                <div class="card-body">
+                                    <h5 class="card-title">Сергей Сергеев</h5>
+                                    <p class="card-text">Большой выбор и хорошие цены.</p>
+                                    <p class="card-text"><small class="text-muted">3 недели назад</small></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Петр Петров</h5>
-                                <p class="card-text">Быстрая доставка и отличное обслуживание.</p>
-                                <p class="card-text"><small class="text-muted">1 неделя назад</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Сергей Сергеев</h5>
-                                <p class="card-text">Большой выбор и хорошие цены.</p>
-                                <p class="card-text"><small class="text-muted">3 недели назад</small></p>
-                            </div>
-                        </div>
-                    </div>
+                    <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -145,5 +156,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        $(document).ready(function() {
+          // Код для инициализации карусели отзывов
+          $('#testimonialCarousel').carousel();
+          
+          // Пример кода для инициализации модального окна
+          $('#productModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Кнопка, вызвавшая модальное окно
+            var product = button.data('product'); // Извлечение информации о продукте из data-* атрибутов
+        
+            var modal = $(this);
+            modal.find('.modal-title').text('Детали продукта: ' + product);
+            modal.find('.modal-body img').attr('src', 'images/' + product.toLowerCase() + '.jpg');
+            modal.find('.modal-body p').text('Описание для ' + product);
+          });
+        });
+    </script>
 </body>
 </html>
