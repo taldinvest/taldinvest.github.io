@@ -1,12 +1,174 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #34495e;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-size: 1.1em;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #1abc9c !important;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.jumbotron {
+    background-color: #1abc9c;
+    color: #fff;
+    padding: 50px 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+#reviews .card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#reviews .card-text {
+    font-size: 1.1em;
+}
+
+ul.list-group li {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul.list-group li button {
+    background-color: red;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+ul.list-group li button:hover {
+    background-color: darkred;
+}
+
+.search-results .card {
+    margin-bottom: 20px;
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-inline input {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 20px;
+    }
+
+    .navbar-collapse {
+        flex-direction: column;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form-inline input {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .form-inline button {
+        width: 100%;
+    }
+}
+
 .notification {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #008cba;
+    background-color: #34495e;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: opacity 0.3s;
+    font-size: 1.1em;
 }
