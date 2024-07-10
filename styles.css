@@ -189,3 +189,42 @@ ul.list-group li button:hover {
 body {
     padding-top: 70px; /* Высота навигационной панели */
 }
+/* Общие цвета и фон */
+body, .navbar, .footer, .btn, .card {
+    font-family: Arial, sans-serif;
+}
+
+/* Навигационная панель */
+.navbar {
+    background-color: blue; /* Синий фон для навигационной панели */
+    color: white; /* Белый текст */
+}
+
+/* Цвет текста в общем и цвет ссылок */
+body, .nav-link {
+    color: black; /* Черный текст */
+}
+
+/* Кнопки */
+.btn {
+    background-color: beige; /* Бежевый фон кнопок */
+    color: black; /* Черный текст на кнопках */
+    border: none;
+    transition: all 0.3s ease; /* Плавная анимация для всех свойств */
+}
+
+.btn:hover, .btn:focus {
+    background-color: darken(beige, 10%); /* Темнее при наведении */
+    transform: scale(1.05); /* Немного увеличивается */
+}
+
+/* Footer */
+footer {
+    background-color: darkblue; /* Темно-синий фон в footer */
+    color: white; /* Белый текст в footer */
+}
+
+/* Карточки товаров и другие элементы */
+.card {
+    border: 1px solid blue; /* Синяя рамка вокруг карточек */
+}
