@@ -125,3 +125,51 @@ document.addEventListener('DOMContentLoaded', () => {
     displayProducts(products);
     updateCart();
 });
+// Подтверждение перед очисткой корзины
+function clearCart() {
+    if (confirm("Вы уверены, что хотите очистить корзину?")) {
+        cart = [];
+        cartCount = 0;
+        totalPrice = 0;
+        updateCart();
+        localStorage.removeItem('cart');
+        localStorage.removeItem('cartCount');
+        localStorage.removeItem('totalPrice');
+    }
+}
+
+// Функции для автодополнения поиска
+function autoCompleteSearch() {
+    const query = document.getElementById('search-query').value.toLowerCase();
+    const results = products.filter(product => product.name.toLowerCase().includes(query));
+    displayAutocompleteResults(results);
+}
+
+function displayAutocompleteResults(results) {
+    const resultsContainer = document.getElementById('autocomplete-results');
+    resultsContainer.innerHTML = '';
+
+    results.forEach(product => {
+        const resultItem = document.createElement('div');
+        resultItem.className = 'autocomplete-item';
+        resultItem.innerText = product.name;
+        resultItem.onclick = () => {
+            document.getElementById('search-query').value = product.name;
+            document.getElementById('autocomplete-results').innerHTML = '';
+        };
+        resultsContainer.appendChild(resultItem);
+    });
+}
+
+// Оставляем существующие функции без изменений
+
+window.onload = function() {
+    if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        cartCount = parseInt(localStorage.getItem('cartCount'), 10) || 0;
+        totalPrice = parseInt(localStorage.getItem('totalPrice'), 10) || 0;
+        updateCart();
+    }
+    // Добавляем обработчики событий для автодополнения
+    document.getElementById('search-query').addEventListener('input', autoCompleteSearch);
+}

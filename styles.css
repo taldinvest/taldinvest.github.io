@@ -172,3 +172,20 @@ ul.list-group li button:hover {
     transition: opacity 0.3s;
     font-size: 1.1em;
 }
+/* Добавление активного состояния */
+.navbar-nav .nav-item .nav-link.active {
+    color: #005f5f !important;
+    font-weight: bold;
+}
+
+/* Фиксированное меню навигации */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+body {
+    padding-top: 70px; /* Высота навигационной панели */
+}
